@@ -2,9 +2,9 @@ name: Test
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ master, main ]
 
 jobs:
 
@@ -34,6 +34,8 @@ jobs:
     - name: Get dependencies
       run: |
         go get -v -t -d ./...
+    - name: Go Generate
+      run: go generate ./...
     - name: Build
       run: go build -v ./...
 
