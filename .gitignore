@@ -5,3 +5,4 @@ coverage.txt
 *.deb
 bazel-*
 *mock_test.go
+sigil
